@@ -1,0 +1,95 @@
+「ファイル名を指定して実行」のコマンド 
+
+
+
+%HomePath%：C:\Usersでのホームディレクトリを開く。 
+%ProgramFiles%：プログラムファイルのディレクトリを開く。 
+%WinDir%: C：\Windowsのディレクトリを開く。 
+%Temp%: C：\Tempのディレクトリを開く。 
+
+
+
+また、この「ファイル名を指定して実行」のウィンドウからは、システムのパスやディレクトリに含まれている、PC上にあるすべてのプログラムを立ち上げられます。
+特に説明するようなことはないのですが、ぜひ知っておきたい、非常に便利なデフォルトのコマンドをいくつか紹介します。 
+
+cmd：コマンドプロンプトを開く。 
+explorer：ファイル検索のウィンドウを開く。 
+msconfig：システム構成のウィンドウを開く。 
+regedit：レジストリエディタを起動する。 
+
+
+
+管理コンソール 
+devmgmt.msc：デバイスとハードウェアの設定（デバイスを無効にする、ドライバの更新、トラブルシューティングなど）
+diskmgmt.msc：ディスクの管理（ディスクパーティションの変更など）
+perfmon.msc：パフォーマンスモニター（メモリ、ハードディスク、プロセッサの監視など） 
+services.msc：システムサービスの設定（サービスを無効にする、起動する、停止する、再起動するなど）
+
+
+
+■簡単に大量(複数)のtsv・csv・txtを一発で結合するたったひとつの方法 
+directory 構成 
+C: 
+┣ testdata 
+┣alldata(空の新しいfolder) 
+┣01.csv 
+┣02.csv 
+┣03.csv 
+
+ 
+コマンドを使って解決します。 
+csvなら 
+1. Windowsなら スタートメニュー＞cmd でコマンドプロンプトを起動します。 
+2. コマンド画面に 
+   cd c:\testdata 
+   type *.csv > c:\testdata/alldata/csvall.csv 
+   でエンターキーを押します 
+3. あとは待てば alldataフォルダに csvall.csv が作成されます。 
+
+tsvなら 
+1 cd c:\testdata 
+2 type *.tsv > c:\testdata/alldata/csvall.tsv 
+
+txtなら 
+1 cd c:\testdata 
+2 type *.txt > c:\testdata/alldata/csvall.txt 
+
+
+●Windows OS内の実行中サービスの確認
+tasklist /svc | find /v "N/A" 
+
+●コンピュータ名を素早く確認する
+hostname
+コマンドは、現在のコンピュータ名(TCP/IPのホスト名)を表示させる
+
+
+net config
+TCP/IPがインストールされていない環境でも実行可能なコマンド
+「net config server」
+「net config workstation」
+「net name」 
+いわゆる「NetBIOSコンピュータ名」を表示させるコマンド
+
+set
+現在の環境変数の値が表示される
+その中から「COMPUTERNAME」という環境変数の値をみればよい
+
+nslookup
+
+
+●日付・時間の取得
+
+コマンドプロンプトで以下のコマンドを入力
+
+echo %DATE%
+echo %TIME%
+
+
+●役に立ちそう
+
+【ファイルのコピー】　copy コピー元のファイル名 コピー先のファイル名
+【ファイル名の変更】　ren 現在のファイル名 新しいファイル名
+【ファイルの削除】　　del 削除するファイル名
+【フォルダの作成】　　mkdir 作成するフォルダ名
+
+
